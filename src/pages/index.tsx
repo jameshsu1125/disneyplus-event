@@ -1,11 +1,10 @@
 import LoadingProcess from '@/components/loadingProcess';
-import { PAGE } from '@/settings/config';
 import { Context, InitialState, Reducer } from '@/settings/constant';
 import '@/settings/global.css';
 import { ActionType, TContext } from '@/settings/type';
 import Click from 'lesca-click';
 import Fetcher, { contentType, formatType } from 'lesca-fetcher';
-import { Suspense, lazy, memo, useContext, useMemo, useReducer } from 'react';
+import { memo, useMemo, useReducer } from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './home';
@@ -24,29 +23,9 @@ if (import.meta.env.VITE_MOCKING === 'true') {
   });
 }
 
-const Pages = memo(() => {
-  const [context] = useContext(Context);
-  const page = context[ActionType.Page];
-
-  const Page = useMemo(() => {
-    const [target] = Object.values(PAGE).filter((data) => data === page);
-    if (target) {
-      const Element = lazy(() => import(`./${target}/index.tsx`));
-      return (
-        <Suspense fallback=''>
-          <Element>Static Pages</Element>
-        </Suspense>
-      );
-    }
-    return null;
-  }, [page]);
-
-  return Page;
-});
-
 const RoutePages = memo(() => (
   <Routes>
-    <Route path='/' element={<Home>Route Pages</Home>} />
+    <Route path='/' element={<Home />} />
   </Routes>
 ));
 
@@ -59,7 +38,6 @@ const App = () => {
         <BrowserRouter basename=''>
           <RoutePages />
         </BrowserRouter>
-        <Pages />
         {state[ActionType.LoadingProcess]?.enabled && <LoadingProcess />}
       </Context.Provider>
     </div>
