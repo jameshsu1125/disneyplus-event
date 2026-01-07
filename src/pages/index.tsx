@@ -35,7 +35,9 @@ const App = () => {
   return (
     <div className='App'>
       <Context.Provider {...{ value }}>
-        <BrowserRouter basename=''>
+        <BrowserRouter
+          basename={window.location.hostname.includes('github.io') ? '/disneyplus-event' : '/'}
+        >
           <RoutePages />
         </BrowserRouter>
         {state[ActionType.LoadingProcess]?.enabled && <LoadingProcess />}

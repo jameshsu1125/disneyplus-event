@@ -1,9 +1,14 @@
-import { memo, useCallback, useRef } from 'react';
+import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
 import type { Swiper as SwiperType } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SlideButton from './sliderButton';
 
-const Carousel = memo(({ item }: { item: string }) => {
+type TProps = {
+  item: string;
+  setState: React.Dispatch<React.SetStateAction<number>>;
+};
+
+const Carousel = forwardRef(({ item, setState }: TProps, ref) => {
   const swiperRef = useRef<SwiperType | null>(null);
 
   const onSlideAction = useCallback(
@@ -13,6 +18,12 @@ const Carousel = memo(({ item }: { item: string }) => {
     },
     [swiperRef],
   );
+
+  useImperativeHandle(ref, () => ({
+    slideTo(index: number) {
+      swiperRef.current?.slideTo(index);
+    },
+  }));
 
   return (
     <div className='carousel'>
@@ -26,7 +37,9 @@ const Carousel = memo(({ item }: { item: string }) => {
             style={{ height: '100%' }}
             spaceBetween={50}
             slidesPerView={1}
-            onSlideChange={() => console.log('slide change')}
+            onSlideChange={(swiper) => {
+              setState(swiper.realIndex);
+            }}
             onSwiper={(swiper) => {
               if (!swiperRef.current) swiperRef.current = swiper;
             }}

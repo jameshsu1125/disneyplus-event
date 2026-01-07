@@ -1,22 +1,28 @@
-import { memo, useEffect } from 'react';
+import { memo } from 'react';
 import './index.less';
+import { twMerge } from 'tailwind-merge';
 
-const Album = memo(({ item }: { item: string }) => {
-  useEffect(() => {
-    console.log(item);
-  }, [item]);
-  return (
-    <div className='album'>
-      <div>
-        <div className='apartment-0' />
+type TAlbumProps = {
+  item: string;
+  state: number;
+  onAlbumChange: (index: number) => void;
+};
+
+const Album = memo(({ item, state, onAlbumChange }: TAlbumProps) => (
+  <div className='album'>
+    {[...new Array(4).keys()].map((i) => (
+      <div key={`album-${item}-${i}`}>
+        <div
+          className={twMerge(
+            `${item}-${i}`,
+            state === i ? 'opacity-100' : 'cursor-pointer opacity-0',
+            state === i ? 'animate-fadeOut' : 'animate-fadeIn',
+          )}
+          style={{ animationDelay: `${i * 0.1}s` }}
+          onClick={() => onAlbumChange(i)}
+        />
       </div>
-      <div>
-        <div className='apartment-0' />
-      </div>
-      <div>
-        <div className='apartment-0' />
-      </div>
-    </div>
-  );
-});
+    ))}
+  </div>
+));
 export default Album;

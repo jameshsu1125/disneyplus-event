@@ -24,7 +24,7 @@
       @apply flex w-full flex-row justify-end space-x-4;
 
       & > div {
-        @apply h-44 w-44 bg-red-500;
+        @apply h-44 w-44;
 
         & > div {
           @apply relative h-full w-full bg-cover bg-center bg-no-repeat;
@@ -45,13 +45,43 @@
         .apartment-3 {
           background-image: url('./img/album/apartment/3.jpg');
         }
+
+        .house-0 {
+          background-image: url('./img/album/house/0.jpg');
+        }
+
+        .house-1 {
+          background-image: url('./img/album/house/1.jpg');
+        }
+
+        .house-2 {
+          background-image: url('./img/album/house/2.jpg');
+        }
+
+        .house-3 {
+          background-image: url('./img/album/house/3.jpg');
+        }
       }
     }
 
-    .title {
+    .t-apartment {
       width: (unit(image-width(@img))) / 1280 * 100%;
 
       @img: './img/t0.svg';
+
+      &::before {
+        padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * 100%);
+        background-image: url(@img);
+        content: '';
+
+        @apply inline-block w-full bg-contain bg-center bg-no-repeat;
+      }
+    }
+
+    .t-house {
+      width: (unit(image-width(@img))) / 1280 * 100%;
+
+      @img: './img/t1.svg';
 
       &::before {
         padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * 100%);
