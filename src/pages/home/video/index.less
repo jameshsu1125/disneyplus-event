@@ -1,0 +1,55 @@
+@import url('@/settings/global.css');
+
+.Video {
+  @apply relative flex w-full flex-col items-center justify-center space-y-10;
+
+  .text {
+    width: (unit(image-width(@img))) / 1280 * 100%;
+
+    @img: './img/text.svg';
+
+    @apply relative;
+
+    &::before {
+      padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * 100%);
+      // background-image: url(@img);
+      content: '';
+
+      @apply inline-block w-full bg-contain bg-center bg-no-repeat;
+    }
+
+    & > div:nth-child(1) {
+      top: 0%;
+      left: 0%;
+      width: (unit(image-width(@img2))) / (unit(image-width(@img))) * 100%;
+
+      @img2: './img/t0.svg';
+      @apply absolute;
+
+      &::before {
+        padding-bottom: (unit(image-height(@img2) / unit(image-width(@img2))) * 100%);
+        background-image: url(@img2);
+        content: '';
+
+        @apply inline-block w-full bg-contain bg-center bg-no-repeat;
+      }
+    }
+
+    & > div:nth-child(2) {
+      top: 71.1%;
+      left: 3.5%;
+      width: (unit(image-width(@img2))) / (unit(image-width(@img))) * 100%;
+
+      @img2: './img/t1.svg';
+      @apply absolute;
+
+      &::before {
+        padding-bottom: (unit(image-height(@img2) / unit(image-width(@img2))) * 100%);
+        background-image: url(@img2);
+        content: '';
+
+        @apply inline-block w-full bg-contain bg-center bg-no-repeat;
+      }
+    }
+  }
+}

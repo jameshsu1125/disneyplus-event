@@ -1,7 +1,14 @@
+@import url('@/settings/config.less');
 @import url('@/settings/global.css');
 
 .KeyVisual {
-  @apply relative min-h-screen w-full;
+  min-height: 1200px;
+
+  @apply relative w-full;
+
+  @media only screen and (max-width: @SM) {
+    @apply min-h-screen;
+  }
 
   .background {
     padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * 100%);
@@ -24,7 +31,7 @@
       background-image: url(@img);
       content: '';
 
-      @apply inline-block w-full bg-contain bg-center bg-no-repeat;
+      @apply inline-block w-full bg-contain bg-center bg-no-repeat drop-shadow-2xl;
     }
   }
 

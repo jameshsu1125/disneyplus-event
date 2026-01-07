@@ -1,11 +1,13 @@
 import HomeBackground from '@/components/home-background';
 import { memo, useState } from 'react';
 import { HomeContext, HomeState, THomeState } from './config';
+import Footer from './footer';
 import HouseItems from './houseItems';
 import './index.less';
 import KeyVisual from './keyVisual';
 import Landing from './landing';
 import TeamIntroduction from './teamIntroduction';
+import Video from './video';
 
 const Home = memo(() => {
   const [state, setState] = useState<THomeState>(HomeState);
@@ -18,6 +20,8 @@ const Home = memo(() => {
         <HouseItems />
         <KeyVisual />
         <TeamIntroduction />
+        <Video />
+        <Footer />
       </HomeContext.Provider>
     </div>
   );

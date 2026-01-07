@@ -1,0 +1,33 @@
+@import url('@/settings/global.css');
+
+.Footer {
+  @apply relative flex w-full flex-col items-center justify-center gap-16 py-20;
+
+  .logo {
+    width: (unit(image-width(@img))) / 1280 * 100%;
+
+    @img: './img/logo.svg';
+
+    &::before {
+      padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * 100%);
+      background-image: url(@img);
+      content: '';
+
+      @apply inline-block w-full bg-contain bg-center bg-no-repeat;
+    }
+  }
+
+  .description {
+    @apply mt-6 text-center text-4xl leading-snug font-black tracking-widest text-white md:text-5xl;
+  }
+
+  .btn {
+    letter-spacing: 0.025rem;
+    font-weight: 800;
+    @apply bg-tertiary text-quaternary w-full cursor-pointer rounded-xl py-6 text-xl;
+  }
+
+  .link {
+    @apply mt-6 text-center text-2xl text-white underline underline-offset-4;
+  }
+}

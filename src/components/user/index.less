@@ -1,0 +1,45 @@
+@import url('@/settings/global.css');
+.User {
+  @apply flex w-full flex-col items-center justify-start space-y-3 text-center;
+
+  .photo {
+    @apply w-7/12;
+
+    .user-0 {
+      background-image: url('./img/user-0.jpg');
+    }
+
+    .user-1 {
+      background-image: url('./img/user-1.jpg');
+    }
+
+    .user-2 {
+      background-image: url('./img/user-2.jpg');
+    }
+
+    .user-3 {
+      background-image: url('./img/user-3.jpg');
+    }
+
+    .user-4 {
+      background-image: url('./img/user-4.jpg');
+    }
+
+    .user-5 {
+      background-image: url('./img/user-5.jpg');
+    }
+
+    & > div {
+      padding-bottom: 100%;
+      @apply w-full rounded-full bg-gray-500 bg-cover bg-center bg-no-repeat;
+    }
+  }
+
+  .name {
+    @apply w-full text-xl text-white md:text-lg;
+  }
+
+  .description {
+    @apply text-secondary w-9/12 text-base md:text-sm;
+  }
+}
