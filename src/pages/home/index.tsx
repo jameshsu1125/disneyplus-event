@@ -5,6 +5,7 @@ import HouseItems from './houseItems';
 import './index.less';
 import KeyVisual from './keyVisual';
 import Landing from './landing';
+import TeamIntroduction from './teamIntroduction';
 
 const Home = memo(() => {
   const [state, setState] = useState<THomeState>(HomeState);
@@ -16,6 +17,7 @@ const Home = memo(() => {
         <Landing />
         <HouseItems />
         <KeyVisual />
+        <TeamIntroduction />
       </HomeContext.Provider>
     </div>
   );

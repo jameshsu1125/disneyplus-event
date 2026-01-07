@@ -11,7 +11,11 @@ const KeyVisual = memo(() => {
         <div className='background' />
         <div className='absolute flex h-full w-full flex-col items-center justify-between py-24 md:py-4'>
           <div className='logo' />
-          <div className='sub'></div>
+          <div className='sub'>
+            {[...new Array(4).keys()].map((index) => (
+              <div key={`t${index}`} />
+            ))}
+          </div>
         </div>
       </div>
     </Section>

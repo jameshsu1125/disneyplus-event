@@ -1,0 +1,33 @@
+@import url('@/settings/global.css');
+
+.TeamIntroduction {
+  @apply relative flex min-h-screen w-full flex-col items-center justify-center py-10;
+
+  .title {
+    @apply flex w-full flex-row items-center justify-center gap-4;
+
+    .actor {
+      width: (unit(image-width(@img))) / 1280 * 100%;
+
+      @img: './img/actor.svg';
+
+      &::before {
+        padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * 100%);
+        background-image: url(@img);
+        content: '';
+
+        @apply inline-block w-full bg-contain bg-center bg-no-repeat;
+      }
+    }
+
+    &::after {
+      height: 1px;
+      content: '';
+      @apply inline-block flex-1 bg-white;
+    }
+  }
+
+  .row {
+    @apply mt-10 flex w-full flex-row flex-wrap items-center justify-center gap-8;
+  }
+}
