@@ -30,8 +30,8 @@ const Form = memo(() => {
               <option disabled value={0}>
                 請選擇坪數
               </option>
-              <option value='apartment'>30坪以下</option>
-              <option value='house'>30坪以上</option>
+              <option value='less'>30坪以下</option>
+              <option value='more'>30坪以上</option>
             </select>
           </div>
         </div>

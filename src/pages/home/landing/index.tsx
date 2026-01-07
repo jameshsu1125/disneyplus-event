@@ -1,3 +1,4 @@
+import Section from '@/components/section';
 import { memo, useEffect } from 'react';
 import Form from './form';
 import './index.less';
@@ -8,7 +9,9 @@ const Landing = memo(() => {
   return (
     <div className='Landing'>
       <Pattern />
-      <Form />
+      <Section>
+        <Form />
+      </Section>
     </div>
   );
 });

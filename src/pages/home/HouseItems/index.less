@@ -1,0 +1,190 @@
+@import url('@/settings/global.css');
+
+.HouseItems {
+  @apply relative flex min-h-screen w-full flex-col items-start justify-items-start space-y-2 py-5;
+
+  .tips {
+    width: (unit(image-width(@img))) / 1280 * 100%;
+
+    @img: './img/tips.svg';
+
+    &::before {
+      padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * 100%);
+      background-image: url(@img);
+      content: '';
+
+      @apply inline-block w-full bg-contain bg-center bg-no-repeat;
+    }
+  }
+
+  .item {
+    @apply relative flex min-h-screen w-full flex-col items-start justify-start space-y-4;
+
+    .album {
+      @apply flex w-full flex-row justify-end space-x-4;
+
+      & > div {
+        @apply h-44 w-44 bg-red-500;
+
+        & > div {
+          @apply relative h-full w-full bg-cover bg-center bg-no-repeat;
+        }
+
+        .apartment-0 {
+          background-image: url('./img/album/apartment/0.jpg');
+        }
+
+        .apartment-1 {
+          background-image: url('./img/album/apartment/1.jpg');
+        }
+
+        .apartment-2 {
+          background-image: url('./img/album/apartment/2.jpg');
+        }
+
+        .apartment-3 {
+          background-image: url('./img/album/apartment/3.jpg');
+        }
+      }
+    }
+
+    .title {
+      width: (unit(image-width(@img))) / 1280 * 100%;
+
+      @img: './img/t0.svg';
+
+      &::before {
+        padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * 100%);
+        background-image: url(@img);
+        content: '';
+
+        @apply inline-block w-full bg-contain bg-center bg-no-repeat;
+      }
+    }
+
+    .carousel {
+      width: calc(~'100% + 80px');
+      @apply relative -mx-10 flex flex-row items-center justify-center;
+
+      & > div:nth-child(1),
+      & > div:nth-child(3) {
+        @apply w-10;
+      }
+
+      & > div:nth-child(2) {
+        padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * 100%);
+
+        @img: './img/album/apartment/0.jpg';
+        @apply relative flex-1;
+
+        & > div {
+          @apply absolute top-0 right-0 bottom-0 left-0;
+
+          .album-apartment-0 {
+            height: 100%;
+
+            &::before {
+              background-image: url(@img);
+              content: '';
+
+              @img: './img/album/apartment/0.jpg';
+
+              @apply inline-block h-full w-full bg-cover bg-center bg-no-repeat;
+            }
+          }
+
+          .album-apartment-1 {
+            height: 100%;
+
+            &::before {
+              background-image: url(@img);
+              content: '';
+
+              @img: './img/album/apartment/1.jpg';
+
+              @apply inline-block h-full w-full bg-cover bg-center bg-no-repeat;
+            }
+          }
+
+          .album-apartment-2 {
+            height: 100%;
+
+            &::before {
+              background-image: url(@img);
+              content: '';
+
+              @img: './img/album/apartment/2.jpg';
+
+              @apply inline-block h-full w-full bg-cover bg-center bg-no-repeat;
+            }
+          }
+
+          .album-apartment-3 {
+            height: 100%;
+
+            &::before {
+              background-image: url(@img);
+              content: '';
+
+              @img: './img/album/apartment/3.jpg';
+
+              @apply inline-block h-full w-full bg-cover bg-center bg-no-repeat;
+            }
+          }
+
+          .album-house-0 {
+            height: 100%;
+
+            &::before {
+              background-image: url(@img);
+              content: '';
+
+              @img: './img/album/house/0.jpg';
+
+              @apply inline-block h-full w-full bg-cover bg-center bg-no-repeat;
+            }
+          }
+
+          .album-house-1 {
+            height: 100%;
+
+            &::before {
+              background-image: url(@img);
+              content: '';
+
+              @img: './img/album/house/1.jpg';
+
+              @apply inline-block h-full w-full bg-cover bg-center bg-no-repeat;
+            }
+          }
+
+          .album-house-2 {
+            height: 100%;
+
+            &::before {
+              background-image: url(@img);
+              content: '';
+
+              @img: './img/album/house/2.jpg';
+
+              @apply inline-block h-full w-full bg-cover bg-center bg-no-repeat;
+            }
+          }
+
+          .album-house-3 {
+            height: 100%;
+
+            &::before {
+              background-image: url(@img);
+              content: '';
+
+              @img: './img/album/house/3.jpg';
+
+              @apply inline-block h-full w-full bg-cover bg-center bg-no-repeat;
+            }
+          }
+        }
+      }
+    }
+  }
+}
