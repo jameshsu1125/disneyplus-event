@@ -1,6 +1,9 @@
+import HomeBackground from '@/components/home-background';
+import Layer from '@/components/layer';
 import { memo, useState } from 'react';
 import { HomeContext, HomeState, THomeState } from './config';
 import './index.less';
+import Landing from './landing';
 
 const Home = memo(() => {
   const [state, setState] = useState<THomeState>(HomeState);
@@ -8,7 +11,12 @@ const Home = memo(() => {
   return (
     <div className='Home'>
       <HomeContext.Provider value={[state, setState]}>
-        <p className='text-center'>Disney+ Event Page</p>
+        <Layer>
+          <HomeBackground />
+        </Layer>
+        <Layer>
+          <Landing />
+        </Layer>
       </HomeContext.Provider>
     </div>
   );

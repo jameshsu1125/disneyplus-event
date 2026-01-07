@@ -1,0 +1,15 @@
+@import url('@/settings/global.css');
+
+.HomeBackground {
+  @apply absolute top-0 h-full w-full bg-black;
+
+  .image {
+    padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * 100%);
+    background-image: url(@img);
+    opacity: 0.79;
+
+    @img: './img/bg.png';
+
+    @apply w-full bg-cover bg-no-repeat;
+  }
+}
