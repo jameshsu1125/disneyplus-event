@@ -1,10 +1,9 @@
 import Section from '@/components/section';
-import { memo, useEffect } from 'react';
+import { memo } from 'react';
 import './index.less';
 import Item from './item';
 
 const HouseItems = memo(() => {
-  useEffect(() => {}, []);
   return (
     <Section>
       <div className='HouseItems'>

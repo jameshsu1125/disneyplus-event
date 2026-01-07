@@ -2,7 +2,7 @@ import HomeBackground from '@/components/home-background';
 import Layer from '@/components/layer';
 import { memo, useState } from 'react';
 import { HomeContext, HomeState, THomeState } from './config';
-import HouseItems from './HouseItems';
+import HouseItems from './houseItems1';
 import './index.less';
 import Landing from './landing';
 

@@ -76,7 +76,7 @@
     width: (unit(image-width(@img))) / 1280 * 100%;
 
     @img: './img/pattern.svg';
-    @apply relative;
+    @apply relative max-w-4xl;
 
     & > div {
       padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * 100%);

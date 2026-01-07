@@ -1,0 +1,54 @@
+@import url('@/settings/global.css');
+
+.HouseItems {
+  .detail {
+    @apply flex w-full flex-col items-start justify-start space-y-4;
+
+    .title {
+      width: (unit(image-width(@img))) / 1280 * 100%;
+
+      @img: './img/detail-title.svg';
+
+      &::before {
+        padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * 100%);
+        background-image: url(@img);
+        content: '';
+
+        @apply inline-block w-full bg-contain bg-center bg-no-repeat;
+      }
+    }
+
+    .table {
+      @apply mt-4 flex w-full flex-row items-start justify-between border-t border-white py-4;
+
+      .head {
+        width: (unit(image-width(@img))) / 1280 * 100%;
+
+        @img: './img/table-head.svg';
+
+        @apply ml-4;
+
+        &::before {
+          padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * 100%);
+          background-image: url(@img);
+          content: '';
+
+          @apply inline-block w-full bg-contain bg-center bg-no-repeat;
+        }
+      }
+
+      .body {
+        ul {
+          @apply text-secondary list-inside list-disc text-lg marker:text-white md:text-2xl;
+
+          li {
+            @apply leading-loose;
+            span {
+              @apply text-white;
+            }
+          }
+        }
+      }
+    }
+  }
+}
