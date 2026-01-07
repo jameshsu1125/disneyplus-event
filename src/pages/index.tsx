@@ -2,14 +2,11 @@ import LoadingProcess from '@/components/loadingProcess';
 import { Context, InitialState, Reducer } from '@/settings/constant';
 import '@/settings/global.css';
 import { ActionType, TContext } from '@/settings/type';
-import Click from 'lesca-click';
 import Fetcher, { contentType, formatType } from 'lesca-fetcher';
 import { memo, useMemo, useReducer } from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './home';
-
-Click.install();
 
 Fetcher.install({
   hostUrl: import.meta.env.VITE_API_PATH || './api',

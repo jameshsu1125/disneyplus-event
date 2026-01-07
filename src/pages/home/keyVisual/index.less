@@ -1,0 +1,44 @@
+@import url('@/settings/global.css');
+
+.KeyVisual {
+  @apply relative min-h-screen w-full;
+
+  .background {
+    padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * 100%);
+    width: 100%;
+    background-image: url(@img);
+    background-size: cover;
+
+    @img: './img/background.png';
+
+    @apply absolute bottom-1/12 bg-cover;
+  }
+
+  .logo {
+    width: (unit(image-width(@img))) / 1280 * 100%;
+
+    @img: './img/logo.svg';
+
+    &::before {
+      padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * 100%);
+      background-image: url(@img);
+      content: '';
+
+      @apply inline-block w-full bg-contain bg-center bg-no-repeat;
+    }
+  }
+
+  .sub {
+    width: (unit(image-width(@img))) / 1280 * 100%;
+
+    @img: './img/sub.svg';
+
+    &::before {
+      padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * 100%);
+      background-image: url(@img);
+      content: '';
+
+      @apply inline-block w-full bg-contain bg-center bg-no-repeat;
+    }
+  }
+}

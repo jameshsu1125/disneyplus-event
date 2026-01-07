@@ -3,7 +3,7 @@ import './index.less';
 
 const SlideButton = memo(({ onClick, type }: { onClick: () => void; type: 'prev' | 'next' }) => (
   <button
-    className='w-full'
+    className='w-full cursor-pointer'
     onClick={onClick}
     style={{ transform: `scale(${type === 'next' ? -1 : 1}, 1)` }}
   >

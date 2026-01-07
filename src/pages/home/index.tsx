@@ -1,9 +1,9 @@
 import HomeBackground from '@/components/home-background';
-import Layer from '@/components/layer';
 import { memo, useState } from 'react';
 import { HomeContext, HomeState, THomeState } from './config';
 import HouseItems from './houseItems';
 import './index.less';
+import KeyVisual from './keyVisual';
 import Landing from './landing';
 
 const Home = memo(() => {
@@ -12,13 +12,10 @@ const Home = memo(() => {
   return (
     <div className='Home'>
       <HomeContext.Provider value={[state, setState]}>
-        <Layer>
-          <HomeBackground />
-        </Layer>
-        <Layer>
-          <Landing />
-          <HouseItems />
-        </Layer>
+        <HomeBackground />
+        <Landing />
+        <HouseItems />
+        <KeyVisual />
       </HomeContext.Provider>
     </div>
   );
