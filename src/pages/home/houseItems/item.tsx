@@ -15,7 +15,7 @@ const Item = memo(({ item }: { item: string }) => {
   };
 
   return (
-    <div className='item'>
+    <div className='item' id={item}>
       <div className={`t-${item}`} />
       <Carousel ref={ref} item={item} setState={setState} />
       <Album item={item} state={state} onAlbumChange={onAlbumChange} />

@@ -7,6 +7,7 @@ import { memo, useMemo, useReducer } from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './home';
+import Modal from '@/components/modal';
 
 Fetcher.install({
   hostUrl: import.meta.env.VITE_API_PATH || './api',
@@ -38,6 +39,7 @@ const App = () => {
           <RoutePages />
         </BrowserRouter>
         {state[ActionType.LoadingProcess]?.enabled && <LoadingProcess />}
+        {state[ActionType.Modal]?.enabled && <Modal />}
       </Context.Provider>
     </div>
   );

@@ -7,11 +7,18 @@ import {
   LoadingProcessType,
   TContext,
   TLoadingProcessState,
+  TModalState,
 } from './type';
 
 export const LoadingProcessState: TLoadingProcessState = {
   enabled: false,
   type: LoadingProcessType.Spokes,
+  body: '',
+};
+
+export const ModalInitialState: TModalState = {
+  enabled: false,
+  title: '',
   body: '',
 };
 

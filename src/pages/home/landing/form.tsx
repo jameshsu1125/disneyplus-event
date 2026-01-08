@@ -1,10 +1,36 @@
-import { memo, useEffect } from 'react';
+import { Context } from '@/settings/constant';
+import { ActionType } from '@/settings/type';
+import { memo, useContext } from 'react';
 import './index.less';
 
 const Form = memo(() => {
-  useEffect(() => {}, []);
+  const [, setContext] = useContext(Context);
+
+  const onSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const form = e.target as HTMLFormElement;
+    const data = Object.fromEntries(new FormData(form).entries());
+    if (Object.values(data).length === 0 || Object.values(data).includes('0')) {
+      setContext({
+        type: ActionType.Modal,
+        state: { enabled: true, title: '表單錯誤', body: '請完整填寫表單內容' },
+      });
+      return;
+    }
+
+    if (data.type) {
+      window.location.hash = String(data.type);
+      return;
+    }
+
+    if (data.size) {
+      if (data.size === 'less') window.location.hash = 'apartment';
+      else window.location.hash = 'house';
+      return;
+    }
+  };
   return (
-    <form className='form'>
+    <form className='form' onSubmit={onSubmit}>
       <div className='tab' />
       <div className='body'>
         <div>

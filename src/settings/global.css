@@ -12,6 +12,12 @@ body {
   @apply bg-backgroundColor text-textColor;
 }
 
+body,
+html {
+  scroll-behavior: smooth;
+}
+
 .App {
+  scroll-behavior: smooth;
   @apply absolute h-full w-full;
 }
