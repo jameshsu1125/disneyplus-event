@@ -7,6 +7,7 @@
   @apply relative w-full;
 
   @media only screen and (max-width: @SM) {
+    min-height: 1000px;
     @apply h-full;
   }
 
@@ -18,7 +19,7 @@
 
     @img: './img/background.png';
 
-    @apply absolute bottom-1/12 bg-cover;
+    @apply absolute bottom-32 bg-cover md:bottom-44;
   }
 
   .logo {

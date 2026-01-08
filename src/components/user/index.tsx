@@ -1,6 +1,7 @@
 import { memo, useEffect } from 'react';
 import './index.less';
 import useTween from 'lesca-use-tween';
+import { twMerge } from 'tailwind-merge';
 
 type UserProps = {
   data: {
@@ -10,6 +11,7 @@ type UserProps = {
   };
   inView: boolean;
   index: number;
+  isPadding?: boolean;
 };
 
 const Photo = memo(
@@ -49,7 +51,17 @@ const Name = memo(({ name, inView, index }: { name: string; inView: boolean; ind
 });
 
 const Description = memo(
-  ({ description, inView, index }: { description: string; inView: boolean; index: number }) => {
+  ({
+    description,
+    inView,
+    index,
+    isPadding,
+  }: {
+    description: string;
+    inView: boolean;
+    index: number;
+    isPadding?: boolean;
+  }) => {
     const [style, setStyle] = useTween({ opacity: 0, y: 20 });
     useEffect(() => {
       if (inView) {
@@ -60,21 +72,26 @@ const Description = memo(
     }, [inView]);
 
     return (
-      <div className='description' style={style}>
+      <div className={twMerge('description', isPadding && 'pb-20 md:pb-0')} style={style}>
         {description}
       </div>
     );
   },
 );
 
-const User = memo(({ data, inView, index }: UserProps) => {
+const User = memo(({ data, inView, index, isPadding }: UserProps) => {
   useEffect(() => {}, [inView]);
 
   return (
     <div className='User'>
       <Photo photo={data.photo} inView={inView} index={index} />
       <Name name={data.name} inView={inView} index={index} />
-      <Description description={data.description} inView={inView} index={index} />
+      <Description
+        description={data.description}
+        inView={inView}
+        index={index}
+        isPadding={isPadding}
+      />
     </div>
   );
 });

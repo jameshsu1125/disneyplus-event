@@ -9,7 +9,7 @@ export const REST_PATH = {
 export const Users = {
   actors: [
     { photo: 'user-0', name: '店長 / 曾國雄', description: '人稱雄哥，專營凶宅多年' },
-    { photo: 'user-1', name: '資深專員 / 陳永仁', description: '毒舌，近期面臨婚姻危機' },
+    { photo: 'user-1', name: '資深專員 / 陳勇仁', description: '毒舌，近期面臨婚姻危機' },
     {
       photo: 'user-2',
       name: '實習專員 / 張亦澤',

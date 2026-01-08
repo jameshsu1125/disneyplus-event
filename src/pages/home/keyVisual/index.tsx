@@ -76,7 +76,7 @@ const KeyVisual = memo(() => (
   <Section widthType='full'>
     <div className='KeyVisual'>
       <Background />
-      <div className='absolute flex h-full w-full flex-col items-center justify-between py-24 md:py-4'>
+      <div className='absolute flex h-full w-full flex-col items-center justify-between py-0 md:py-4'>
         <Logo />
         <Sub />
       </div>
