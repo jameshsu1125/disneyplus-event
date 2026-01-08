@@ -2,7 +2,7 @@ import { memo, useEffect } from 'react';
 import './index.less';
 import Section from '@/components/section';
 import Button from '@/components/button';
-import { urlList } from '@/settings/config';
+import { URLList } from '@/settings/config';
 
 const GroupButton = memo(
   ({
@@ -41,14 +41,14 @@ const Footer = memo(() => {
             label='訂閱 DISNEY+ 年費方案'
             description='訂閱 DISNEY+ 年費方案，現省18%*'
             onClick={() => {
-              window.open(urlList.annual, '_blank');
+              window.open(URLList.annual, '_blank');
             }}
           />
           <GroupButton
             label='訂閱 DISNEY+ 月費方案'
             description='可隨時升級或取消^'
             onClick={() => {
-              window.open(urlList.plans, '_blank');
+              window.open(URLList.plans, '_blank');
             }}
           />
         </div>

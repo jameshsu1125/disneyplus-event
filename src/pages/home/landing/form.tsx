@@ -13,7 +13,7 @@ const Form = memo(() => {
     if (Object.values(data).length === 0 || Object.values(data).includes('0')) {
       setContext({
         type: ActionType.Modal,
-        state: { enabled: true, title: '表單錯誤', body: '請完整填寫表單內容' },
+        state: { enabled: true, title: '表單資料有誤', body: '表單請不要留白.' },
       });
       return;
     }

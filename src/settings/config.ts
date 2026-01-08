@@ -27,8 +27,84 @@ export const Users = {
   ],
 };
 
-export const urlList = {
+export const URLList = {
   annual:
     'https://www.disneyplus.com/commerce/plans?isLicensePlateUser=false&billingCadence=ANNUAL',
   plans: 'https://www.disneyplus.com/zh-hant/commerce/plans',
 };
+
+export const LandingPatternTransition = [
+  {
+    initial: { css: { opacity: 0 }, delay: 0, duration: 100 },
+    animate: { css: { opacity: 1 }, delay: 0, duration: 500 },
+  },
+  {
+    initial: { css: { opacity: 0 }, delay: 0, duration: 100 },
+    animate: { css: { opacity: 1 }, delay: 300, duration: 500 },
+  },
+  {
+    initial: { css: { opacity: 0 }, delay: 0, duration: 100 },
+    animate: { css: { opacity: 1 }, delay: 600, duration: 500 },
+  },
+  {
+    initial: { css: { opacity: 0 }, delay: 0, duration: 100 },
+    animate: { css: { opacity: 1 }, delay: 900, duration: 500 },
+  },
+
+  {
+    initial: { css: { opacity: 0 }, delay: 0, duration: 100 },
+    animate: { css: { opacity: 1 }, delay: 1200, duration: 500 },
+  },
+  {
+    initial: { css: { opacity: 0 }, delay: 0, duration: 100 },
+    animate: { css: { opacity: 1 }, delay: 1500, duration: 500 },
+  },
+  {
+    initial: { css: { opacity: 0, x: -50 }, delay: 0, duration: 100 },
+    animate: { css: { opacity: 1, x: 0 }, delay: 1200, duration: 500 },
+  },
+  {
+    initial: { css: { opacity: 0, x: 50 }, delay: 0, duration: 100 },
+    animate: { css: { opacity: 1, x: 0 }, delay: 1200, duration: 500 },
+  },
+  {
+    initial: { css: { opacity: 0, x: -50 }, delay: 0, duration: 100 },
+    animate: { css: { opacity: 1, x: 0 }, delay: 1500, duration: 500 },
+  },
+  {
+    initial: { css: { opacity: 0, x: 50 }, delay: 0, duration: 100 },
+    animate: { css: { opacity: 1, x: 0 }, delay: 1500, duration: 500 },
+  },
+  {
+    initial: { css: { opacity: 0 }, delay: 0, duration: 100 },
+    animate: { css: { opacity: 1 }, delay: 1800, duration: 500 },
+  },
+  {
+    initial: { css: { opacity: 0 }, delay: 0, duration: 100 },
+    animate: { css: { opacity: 1 }, delay: 1900, duration: 500 },
+  },
+  {
+    initial: { css: { opacity: 0 }, delay: 0, duration: 100 },
+    animate: { css: { opacity: 1 }, delay: 2000, duration: 500 },
+  },
+  {
+    initial: { css: { opacity: 0 }, delay: 0, duration: 100 },
+    animate: { css: { opacity: 1 }, delay: 2100, duration: 500 },
+  },
+  {
+    initial: { css: { opacity: 0, scale: 3 }, delay: 0, duration: 100 },
+    animate: { css: { opacity: 1, scale: 1 }, delay: 2400, duration: 200 },
+  },
+  {
+    initial: { css: { opacity: 0, scale: 3 }, delay: 0, duration: 100 },
+    animate: { css: { opacity: 1, scale: 1 }, delay: 2700, duration: 200 },
+  },
+  {
+    initial: { css: { opacity: 0, scale: 3 }, delay: 0, duration: 100 },
+    animate: { css: { opacity: 1, scale: 1 }, delay: 3000, duration: 200 },
+  },
+  {
+    initial: { css: { opacity: 0, scale: 3 }, delay: 0, duration: 100 },
+    animate: { css: { opacity: 1, scale: 1 }, delay: 3300, duration: 200 },
+  },
+];
