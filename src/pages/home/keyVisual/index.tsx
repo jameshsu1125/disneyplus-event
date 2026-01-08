@@ -3,6 +3,7 @@ import useTween, { Bezier } from 'lesca-use-tween';
 import { memo, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import './index.less';
+import { IntersectionTriggerOnce } from '@/settings/config';
 
 const TransitionProperties = [
   { opacity: 0, x: -50, y: 0 },
@@ -28,7 +29,7 @@ const Text = memo(({ inView, index }: { inView: boolean; index: number }) => {
 });
 
 const Sub = memo(() => {
-  const { ref, inView } = useInView({ threshold: 0, triggerOnce: false });
+  const { ref, inView } = useInView({ threshold: 0, triggerOnce: IntersectionTriggerOnce });
   return (
     <div className='sub' ref={ref}>
       {[...new Array(4).keys()].map((index) => (
@@ -39,7 +40,7 @@ const Sub = memo(() => {
 });
 
 const Logo = memo(() => {
-  const { ref, inView } = useInView({ threshold: 1, triggerOnce: false });
+  const { ref, inView } = useInView({ threshold: 1, triggerOnce: IntersectionTriggerOnce });
   const [style, setStyle] = useTween({ opacity: 0, y: -200 });
 
   useEffect(() => {
@@ -58,7 +59,7 @@ const Logo = memo(() => {
 });
 
 const Background = memo(() => {
-  const { ref, inView } = useInView({ threshold: 0.3, triggerOnce: false });
+  const { ref, inView } = useInView({ threshold: 0.3, triggerOnce: IntersectionTriggerOnce });
   const [style, setStyle] = useTween({ opacity: 0.1 });
 
   useEffect(() => {

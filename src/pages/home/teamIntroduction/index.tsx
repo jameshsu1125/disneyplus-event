@@ -1,14 +1,14 @@
 import Section from '@/components/section';
 import User from '@/components/user';
 import useMedia, { MediaType } from '@/hooks/useMedia';
-import { Users } from '@/settings/config';
+import { IntersectionTriggerOnce, Users } from '@/settings/config';
 import { memo, useEffect, useMemo } from 'react';
 import { useInView } from 'react-intersection-observer';
 import './index.less';
 import Title from './title';
 
 const Actors = memo(() => {
-  const { ref, inView } = useInView({ threshold: 1, triggerOnce: false });
+  const { ref, inView } = useInView({ threshold: 1, triggerOnce: IntersectionTriggerOnce });
   return (
     <div className='row' ref={ref}>
       {Users.actors.map((user, index) => (
@@ -19,7 +19,7 @@ const Actors = memo(() => {
 });
 
 const Experts = memo(() => {
-  const { ref, inView } = useInView({ threshold: 1, triggerOnce: false });
+  const { ref, inView } = useInView({ threshold: 1, triggerOnce: IntersectionTriggerOnce });
 
   const [device] = useMedia();
 

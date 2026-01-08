@@ -108,3 +108,5 @@ export const LandingPatternTransition = [
     animate: { css: { opacity: 1, scale: 1 }, delay: 3300, duration: 200 },
   },
 ];
+
+export const IntersectionTriggerOnce = false;
