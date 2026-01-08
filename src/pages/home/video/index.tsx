@@ -1,15 +1,47 @@
 import Section from '@/components/section';
 import useMedia, { MediaType } from '@/hooks/useMedia';
-import { memo, useMemo } from 'react';
+import { Context } from '@/settings/constant';
+import { ActionType } from '@/settings/type';
+import { memo, useContext, useEffect, useMemo } from 'react';
 import './index.less';
 
 const Video = memo(() => {
+  const [, setContext] = useContext(Context);
   const [device] = useMedia();
 
   const size = useMemo(() => {
     if (device > MediaType.SM) return { width: 1024, height: 576 };
     return { width: 750, height: 421 };
   }, [device]);
+
+  useEffect(() => {
+    const onClick = () => {
+      setContext({ type: ActionType.Music, state: false });
+    };
+
+    let blurTimeout: NodeJS.Timeout;
+
+    const onBlur = () => {
+      blurTimeout = setTimeout(() => {
+        if (document.activeElement?.tagName === 'IFRAME') {
+          onClick();
+        }
+      }, 0);
+    };
+
+    const onFocus = () => {
+      clearTimeout(blurTimeout);
+    };
+
+    window.addEventListener('blur', onBlur);
+    window.addEventListener('focus', onFocus);
+
+    return () => {
+      window.removeEventListener('blur', onBlur);
+      window.removeEventListener('focus', onFocus);
+      clearTimeout(blurTimeout);
+    };
+  }, []);
 
   return (
     <Section>

@@ -25,6 +25,7 @@ export const ModalInitialState: TModalState = {
 export const InitialState: IState = {
   [ActionType.Page]: PAGE.home,
   [ActionType.LoadingProcess]: LoadingProcessState,
+  [ActionType.Music]: false,
 };
 
 export const Context = createContext<TContext>([InitialState, () => {}]);

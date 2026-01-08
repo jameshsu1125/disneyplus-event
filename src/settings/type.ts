@@ -4,6 +4,7 @@ export enum ActionType {
   Page = 'page',
   LoadingProcess = 'loadingProcess',
   Modal = 'modal',
+  Music = 'music',
 }
 
 export enum LoadingProcessType {
@@ -43,10 +44,11 @@ export interface IState {
   page?: string;
   loadingProcess?: TLoadingProcessState;
   modal?: TModalState;
+  music?: boolean;
 }
 
 export interface IAction {
-  state: IState | TLoadingProcessState | Partial<TModalState>;
+  state: IState | TLoadingProcessState | Partial<TModalState> | boolean;
   type: ActionType;
 }
 

@@ -11,7 +11,7 @@ import Music from '@/components/music';
 const Actors = memo(() => {
   const { ref, inView } = useInView({ threshold: 1, triggerOnce: IntersectionTriggerOnce });
   return (
-    <div className='row pb-16' ref={ref}>
+    <div className='row pb-10' ref={ref}>
       {Users.actors.map((user, index) => (
         <User key={user.name} data={user} inView={inView} index={index} isPadding={index < 2} />
       ))}
