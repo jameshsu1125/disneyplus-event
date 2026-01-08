@@ -1,6 +1,6 @@
 import { memo } from 'react';
-import './index.less';
 import { twMerge } from 'tailwind-merge';
+import './index.less';
 
 type TAlbumProps = {
   item: string;
@@ -8,21 +8,24 @@ type TAlbumProps = {
   onAlbumChange: (index: number) => void;
 };
 
-const Album = memo(({ item, state, onAlbumChange }: TAlbumProps) => (
-  <div className='album'>
-    {[...new Array(4).keys()].map((i) => (
-      <div key={`album-${item}-${i}`}>
-        <div
-          className={twMerge(
-            `${item}-${i}`,
-            state === i ? 'opacity-100' : 'cursor-pointer opacity-0',
-            state === i ? 'animate-fadeOut' : 'animate-fadeIn',
-          )}
-          style={{ animationDelay: `${i * 0.1}s` }}
-          onClick={() => onAlbumChange(i)}
-        />
-      </div>
-    ))}
-  </div>
-));
+const Album = memo(({ item, state }: TAlbumProps) => {
+  return (
+    <div className='album'>
+      {[...new Array(4).keys()].map((i) => {
+        return (
+          <div key={`album-${item}-${i}`} className={twMerge(state === i ? 'hidden' : 'block')}>
+            <div
+              className={twMerge(
+                `${item}-${i}`,
+                state === i ? 'opacity-100' : 'opacity-0',
+                state === i ? 'animate-fadeOut' : 'animate-fadeIn',
+              )}
+              style={{ animationDelay: `${i * 0.1}s` }}
+            />
+          </div>
+        );
+      })}
+    </div>
+  );
+});
 export default Album;

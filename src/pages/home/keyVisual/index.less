@@ -25,13 +25,13 @@
     width: (unit(image-width(@img))) / 1280 * 100%;
 
     @img: './img/logo.svg';
+    @apply relative;
 
-    &::before {
+    & > div {
       padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * 100%);
       background-image: url(@img);
-      content: '';
 
-      @apply inline-block w-full bg-contain bg-center bg-no-repeat drop-shadow-2xl;
+      @apply w-full bg-contain bg-center bg-no-repeat;
     }
   }
 

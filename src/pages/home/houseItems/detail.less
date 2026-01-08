@@ -43,8 +43,21 @@
 
           li {
             @apply leading-loose;
+
             span {
-              @apply text-white;
+              @apply animate-blank-3s-0s text-textColor;
+            }
+          }
+
+          li:nth-child(even) {
+            span {
+              @apply animate-blank-3s-1s;
+            }
+          }
+
+          li:last-child {
+            span {
+              @apply animate-blank-3s-0s;
             }
           }
         }
