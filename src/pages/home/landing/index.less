@@ -2,7 +2,7 @@
 @import url('@/settings/config.less');
 
 .Landing {
-  @apply flex min-h-screen w-full flex-col items-center justify-center space-y-24;
+  @apply flex h-full w-full flex-col items-center justify-center space-y-24;
 
   .form {
     @apply flex w-full flex-col items-start justify-start;
@@ -66,7 +66,7 @@
 
       & > div:last-child {
         button {
-          @apply bg-primary h-full px-5 py-5;
+          @apply bg-primary hover:bg-quaternary h-full cursor-pointer px-5 py-5;
         }
       }
     }

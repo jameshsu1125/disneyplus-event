@@ -18,6 +18,7 @@
     "lesca-react-onload": "^2.0.10",
     "lesca-use-tween": "^4.0.2",
     "react": "^19.2.3",
+    "react-div-100vh": "^0.7.0",
     "react-dom": "^19.2.3",
     "react-intersection-observer": "^10.0.0",
     "react-loading": "^2.0.3",

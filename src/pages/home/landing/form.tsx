@@ -2,6 +2,7 @@ import { Context } from '@/settings/constant';
 import { ActionType } from '@/settings/type';
 import { memo, useContext } from 'react';
 import './index.less';
+import { scrollToElement } from '@/settings/utils';
 
 const Form = memo(() => {
   const [, setContext] = useContext(Context);
@@ -19,13 +20,13 @@ const Form = memo(() => {
     }
 
     if (data.type) {
-      window.location.hash = String(data.type);
+      scrollToElement(String(data.type));
       return;
     }
 
     if (data.size) {
-      if (data.size === 'less') window.location.hash = 'apartment';
-      else window.location.hash = 'house';
+      if (data.size === 'less') scrollToElement('apartment');
+      else scrollToElement('house');
       return;
     }
   };

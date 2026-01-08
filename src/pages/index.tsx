@@ -24,6 +24,7 @@ if (import.meta.env.VITE_MOCKING === 'true') {
 const RoutePages = memo(() => (
   <Routes>
     <Route path='/' element={<Home />} />
+    <Route path='/HauntedHouseSecrets' element={<Home />} />
   </Routes>
 ));
 

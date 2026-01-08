@@ -6,6 +6,7 @@ import { memo, useEffect, useMemo } from 'react';
 import './index.less';
 import Title from './title';
 import { useInView } from 'react-intersection-observer';
+import Div100vh from 'react-div-100vh';
 
 const Actors = memo(() => {
   const { ref, inView } = useInView({ threshold: 1 });
@@ -47,14 +48,16 @@ const TeamIntroduction = memo(() => {
   useEffect(() => {}, []);
 
   return (
-    <Section>
-      <div className='TeamIntroduction'>
-        <Title name='actor' />
-        <Actors />
-        <Title name='expert' />
-        <Experts />
-      </div>
-    </Section>
+    <Div100vh className='min-h-320'>
+      <Section>
+        <div className='TeamIntroduction'>
+          <Title name='actor' />
+          <Actors />
+          <Title name='expert' />
+          <Experts />
+        </div>
+      </Section>
+    </Div100vh>
   );
 });
 export default TeamIntroduction;

@@ -7,7 +7,7 @@ const HouseItems = memo(() => {
   return (
     <Section>
       <div className='HouseItems'>
-        <div className='tips' />
+        <div id='tips' className='tips' />
         <Item item='apartment' />
         <Item item='house' />
       </div>
