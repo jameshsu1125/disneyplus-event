@@ -63,7 +63,7 @@ const Form = memo(() => {
           </div>
         </div>
         <div>
-          <button>
+          <button type='submit'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               width={57.3 * 0.8}

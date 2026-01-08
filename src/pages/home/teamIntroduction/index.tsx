@@ -3,13 +3,12 @@ import User from '@/components/user';
 import useMedia, { MediaType } from '@/hooks/useMedia';
 import { Users } from '@/settings/config';
 import { memo, useEffect, useMemo } from 'react';
+import { useInView } from 'react-intersection-observer';
 import './index.less';
 import Title from './title';
-import { useInView } from 'react-intersection-observer';
-import Div100vh from 'react-div-100vh';
 
 const Actors = memo(() => {
-  const { ref, inView } = useInView({ threshold: 1 });
+  const { ref, inView } = useInView({ threshold: 1, triggerOnce: false });
   return (
     <div className='row' ref={ref}>
       {Users.actors.map((user, index) => (
@@ -20,7 +19,7 @@ const Actors = memo(() => {
 });
 
 const Experts = memo(() => {
-  const { ref, inView } = useInView({ threshold: 1 });
+  const { ref, inView } = useInView({ threshold: 1, triggerOnce: false });
 
   const [device] = useMedia();
 
@@ -48,16 +47,14 @@ const TeamIntroduction = memo(() => {
   useEffect(() => {}, []);
 
   return (
-    <Div100vh className='min-h-320'>
-      <Section>
-        <div className='TeamIntroduction'>
-          <Title name='actor' />
-          <Actors />
-          <Title name='expert' />
-          <Experts />
-        </div>
-      </Section>
-    </Div100vh>
+    <Section>
+      <div className='TeamIntroduction'>
+        <Title name='actor' />
+        <Actors />
+        <Title name='expert' />
+        <Experts />
+      </div>
+    </Section>
   );
 });
 export default TeamIntroduction;
