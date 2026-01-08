@@ -11,7 +11,7 @@ type TAlbumProps = {
 const Album = memo(({ item, state }: TAlbumProps) => {
   return (
     <div className='album'>
-      {[...new Array(4).keys()].map((i) => {
+      {[...new Array(5).keys()].map((i) => {
         return (
           <div key={`album-${item}-${i}`} className={twMerge(state === i ? 'hidden' : 'block')}>
             <div

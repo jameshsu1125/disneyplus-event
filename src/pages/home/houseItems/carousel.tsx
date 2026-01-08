@@ -45,7 +45,7 @@ const Carousel = forwardRef(({ item, setState }: TProps, ref) => {
             }}
             navigation
           >
-            {[...new Array(4).keys()].map((index) => (
+            {[...new Array(5).keys()].map((index) => (
               <SwiperSlide key={`slider-${index}`}>
                 <div className={`album-${item}-${index}`} />
               </SwiperSlide>

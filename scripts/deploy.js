@@ -62,21 +62,22 @@ const Uid = (len) => {
         config.remoteRoot = `${date}/${id}`;
 
         switch (answers.name) {
-          case 'gh-pages':
+          default:
+          case list[0]:
             try {
               execSync('npx gh-pages -d dist', { stdio: 'inherit' });
             } catch (error) {
               console.log(chalk.redBright('gh-pages deploy failed:', error.message));
             }
             break;
-          case 'netlify':
+          case list[1]:
             try {
               execSync('netlify deploy --dir=dist', { stdio: 'inherit' });
             } catch (error) {
               console.log(chalk.redBright('Netlify deploy failed:', error.message));
             }
             break;
-          case 'netlify-prod':
+          case list[2]:
             try {
               execSync('netlify deploy --prod --dir=dist', { stdio: 'inherit' });
             } catch (error) {
@@ -84,7 +85,7 @@ const Uid = (len) => {
             }
             break;
 
-          case 'ftp':
+          case list[3]:
             console.log(chalk.greenBright(`[ ${answers.name} ]`), chalk.white(message.executing));
             ftpDeploy.on('uploaded', function (data) {
               log(
