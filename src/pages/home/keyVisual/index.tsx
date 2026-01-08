@@ -20,7 +20,11 @@ const Text = memo(({ inView, index }: { inView: boolean; index: number }) => {
       setStyle(TransitionProperties[index], 10);
     }
   }, [inView]);
-  return <div style={style} />;
+  return (
+    <div>
+      <div style={style} />
+    </div>
+  );
 });
 
 const Sub = memo(() => {

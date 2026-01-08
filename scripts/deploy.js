@@ -40,7 +40,7 @@ const Uid = (len) => {
 };
 
 (async () => {
-  const list = ['gh-pages', 'netlify', 'netlify-prod', 'ftp'];
+  const list = ['gh-pages', 'netlify-draft', 'netlify-prod', 'ftp'];
 
   if (list.length) {
     inquirer
