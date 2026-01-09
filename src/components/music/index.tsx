@@ -18,7 +18,7 @@ const Music = memo(() => {
   return (
     <Section>
       <p className='text-secondary w-full text-center text-sm'>
-        網站歌曲：最後一搏（《凶宅專賣店》主題曲 ）·動力火車
+        網站歌曲：最後一搏（《凶宅專賣店》主題曲 ）{'  '}動力火車
       </p>
       <ReactHowler src={src} playing={isPlaying} />
     </Section>
