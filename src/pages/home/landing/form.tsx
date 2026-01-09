@@ -14,7 +14,7 @@ const Form = memo(() => {
     if (Object.values(data).length === 0 || Object.values(data).includes('0')) {
       setContext({
         type: ActionType.Modal,
-        state: { enabled: true, title: '表單資料有誤', body: '表單請不要留白.' },
+        state: { enabled: true, title: '表單資料有誤', body: '表單請不要留白' },
       });
       return;
     }

@@ -12,6 +12,9 @@ const Music = memo(() => {
   useEffect(() => {
     window.addEventListener('click', () => {
       setContext({ type: ActionType.Music, state: true });
+      document.querySelectorAll('iframe').forEach((iframe) => {
+        iframe.contentWindow?.postMessage('{"event":"command","func":"stopVideo","args":""}', '*');
+      });
     });
   }, []);
 
