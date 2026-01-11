@@ -19,6 +19,11 @@ const Form = memo(() => {
       return;
     }
 
+    if (data.size === undefined && data.type === undefined) {
+      scrollToElement('apartment');
+      return;
+    }
+
     if (data.type) {
       scrollToElement(String(data.type));
       return;
