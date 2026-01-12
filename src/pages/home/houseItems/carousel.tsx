@@ -2,6 +2,7 @@ import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
 import type { Swiper as SwiperType } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SlideButton from './sliderButton';
+import Gtag from 'lesca-gtag';
 
 type TProps = {
   item: string;
@@ -39,6 +40,7 @@ const Carousel = forwardRef(({ item, setState }: TProps, ref) => {
             slidesPerView={1}
             onSlideChange={(swiper) => {
               setState(swiper.realIndex);
+              Gtag.event('carousel', 'slide_change', { index: swiper.realIndex, item });
             }}
             onSwiper={(swiper) => {
               if (!swiperRef.current) swiperRef.current = swiper;

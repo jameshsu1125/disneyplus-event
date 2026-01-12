@@ -4,6 +4,7 @@ import { Context } from '@/settings/constant';
 import { ActionType } from '@/settings/type';
 import { memo, useContext, useEffect, useMemo } from 'react';
 import './index.less';
+import Gtag from 'lesca-gtag';
 
 const Video = memo(() => {
   const [, setContext] = useContext(Context);
@@ -17,6 +18,7 @@ const Video = memo(() => {
   useEffect(() => {
     const onClick = () => {
       setContext({ type: ActionType.Music, state: false });
+      Gtag.event('video', 'play_video');
     };
 
     let blurTimeout: NodeJS.Timeout;

@@ -3,6 +3,7 @@ import Section from '@/components/section';
 import { URLList } from '@/settings/config';
 import { memo } from 'react';
 import './index.less';
+import Gtag from 'lesca-gtag';
 
 const GroupButton = memo(
   ({
@@ -40,6 +41,7 @@ const Footer = memo(() => (
           description='訂閱 DISNEY+ 年費方案，現省18%*'
           onClick={() => {
             window.open(URLList.annual, '_blank');
+            Gtag.event('footer', 'click_annual_plan');
           }}
         />
         <GroupButton
@@ -47,11 +49,19 @@ const Footer = memo(() => (
           description='可隨時升級或取消^'
           onClick={() => {
             window.open(URLList.plans, '_blank');
+            Gtag.event('footer', 'click_monthly_plan');
           }}
         />
       </div>
       <div className='flex flex-col items-center justify-center space-y-7'>
-        <a className='link' href='https://www.disneyplus.com/zh-tw#apac-plan-comp' target='_blank'>
+        <a
+          className='link'
+          href='https://www.disneyplus.com/zh-tw#apac-plan-comp'
+          target='_blank'
+          onClick={() => {
+            Gtag.event('footer', 'click_plan_details');
+          }}
+        >
           參閱方案細節
         </a>
         <div className='text-secondary text-sm'>

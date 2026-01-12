@@ -9,6 +9,19 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './home';
 import Modal from '@/components/modal';
 import PageNotFound from './404';
+import Gtag from 'lesca-gtag';
+
+declare global {
+  interface Window {
+    dataLayer: Record<string, any>[];
+    gtag: (...args: any[]) => void;
+  }
+}
+
+window.dataLayer = window.dataLayer || [];
+window.gtag = function (...args) {
+  window.dataLayer.push(args);
+};
 
 Fetcher.install({
   hostUrl: import.meta.env.VITE_API_PATH || './api',
@@ -21,6 +34,8 @@ if (import.meta.env.VITE_MOCKING === 'true') {
     e.worker.start({ serviceWorker: { url: './mockServiceWorker.js' } });
   });
 }
+
+Gtag.install(import.meta.env.VITE_GTAG || '');
 
 const RoutePages = memo(() => (
   <Routes>
