@@ -35,7 +35,7 @@ if (import.meta.env.VITE_MOCKING === 'true') {
   });
 }
 
-Gtag.install(import.meta.env.VITE_GTAG || '');
+Gtag.insert(import.meta.env.VITE_GTAG || 'G-RFPKNEW2KP');
 
 const RoutePages = memo(() => (
   <Routes>

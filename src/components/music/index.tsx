@@ -2,7 +2,7 @@ import { Context } from '@/settings/constant';
 import { memo, useEffect, useContext } from 'react';
 import ReactHowler from 'react-howler';
 import Section from '../section';
-import src from './src/(60s) 動力火車 - 最後一搏 .mp3';
+import src from './src/(60s) 動力火車 - 最後一搏.mp3';
 import { ActionType } from '@/settings/type';
 
 const Music = memo(() => {
