@@ -16,6 +16,7 @@ export default defineConfig(async ({ mode }) => {
     root: resolve(__dirname, 'src/pages'),
     publicDir: resolve(__dirname, 'public'),
     build: {
+      assetsInlineLimit: 8192 * 2,
       outDir: resolve(__dirname, 'dist'),
       emptyOutDir: true,
       rollupOptions: {

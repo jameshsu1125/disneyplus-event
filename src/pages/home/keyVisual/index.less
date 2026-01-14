@@ -17,7 +17,7 @@
     background-image: url(@img);
     background-size: cover;
 
-    @img: './img/background.png';
+    @img: './img/background.jpg';
 
     @apply absolute bottom-32 bg-cover md:bottom-44;
   }
@@ -30,7 +30,10 @@
 
     & > div {
       padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * 100%);
-      background-image: url(@img);
+      // background-image: url(@img);
+      svg {
+        @apply w-full;
+      }
 
       @apply w-full bg-contain bg-center bg-no-repeat;
     }
@@ -51,6 +54,12 @@
       @apply inline-block w-full bg-contain bg-center bg-no-repeat;
     }
 
+    & > div {
+      svg {
+        @apply w-full;
+      }
+    }
+
     & > div:nth-child(1) {
       top: 0%;
       left: 0%;
@@ -61,10 +70,8 @@
 
       & > div {
         padding-bottom: (unit(image-height(@img2) / unit(image-width(@img2))) * 100%);
-        background-image: url(@img2);
-        content: '';
 
-        @apply inline-block w-full bg-contain bg-center bg-no-repeat;
+        @apply w-full;
       }
     }
 
@@ -78,10 +85,9 @@
 
       & > div {
         padding-bottom: (unit(image-height(@img2) / unit(image-width(@img2))) * 100%);
-        background-image: url(@img2);
-        content: '';
+        // background-image: url(@img2);
 
-        @apply inline-block w-full bg-contain bg-center bg-no-repeat;
+        @apply w-full;
       }
     }
 
@@ -95,10 +101,9 @@
 
       & > div {
         padding-bottom: (unit(image-height(@img2) / unit(image-width(@img2))) * 100%);
-        background-image: url(@img2);
-        content: '';
+        // background-image: url(@img2);
 
-        @apply inline-block w-full bg-contain bg-center bg-no-repeat;
+        @apply w-full;
       }
     }
 
@@ -112,10 +117,9 @@
 
       & > div {
         padding-bottom: (unit(image-height(@img2) / unit(image-width(@img2))) * 100%);
-        background-image: url(@img2);
-        content: '';
+        // background-image: url(@img2);
 
-        @apply inline-block w-full bg-contain bg-center bg-no-repeat;
+        @apply w-full;
       }
     }
   }

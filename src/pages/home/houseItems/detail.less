@@ -9,12 +9,8 @@
 
       @img: './img/detail-title.svg';
 
-      &::before {
-        padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * 100%);
-        background-image: url(@img);
-        content: '';
-
-        @apply inline-block w-full bg-contain bg-center bg-no-repeat;
+      svg {
+        @apply w-full;
       }
     }
 
@@ -26,15 +22,11 @@
 
         @img: './img/table-head.svg';
 
-        @apply ml-4;
-
-        &::before {
-          padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * 100%);
-          background-image: url(@img);
-          content: '';
-
-          @apply inline-block w-full bg-contain bg-center bg-no-repeat;
+        svg {
+          @apply w-full;
         }
+
+        @apply ml-4;
       }
 
       .body {

@@ -7,13 +7,18 @@
     width: (unit(image-width(@img))) / 1280 * 100%;
 
     @img: './img/logo.svg';
+    @apply relative;
+
+    svg {
+      @apply absolute top-0 w-full;
+    }
 
     &::before {
       padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * 100%);
-      background-image: url(@img);
+      // background-image: url(@img);
       content: '';
 
-      @apply inline-block w-full bg-contain bg-center bg-no-repeat;
+      @apply inline-block w-full;
     }
   }
 
