@@ -1,9 +1,9 @@
 import Button from '@/components/button';
 import Section from '@/components/section';
 import { URLList } from '@/settings/config';
+// import Gtag from 'lesca-gtag';
 import { memo } from 'react';
 import './index.less';
-import Gtag from 'lesca-gtag';
 
 const GroupButton = memo(
   ({
@@ -55,7 +55,8 @@ const Footer = memo(() => (
           description='訂閱 DISNEY+ 年費方案，現省18%*'
           onClick={() => {
             window.open(URLList.annual, '_blank');
-            Gtag.event('footer', 'click_annual_plan');
+            window.gtag('event', 'click_annual_plan');
+            // Gtag.event('footer', 'click_annual_plan');
           }}
         />
         <GroupButton
@@ -63,7 +64,8 @@ const Footer = memo(() => (
           description='可隨時升級或取消^'
           onClick={() => {
             window.open(URLList.plans, '_blank');
-            Gtag.event('footer', 'click_monthly_plan');
+            window.gtag('event', 'click_monthly_plan');
+            // Gtag.event('footer', 'click_monthly_plan');
           }}
         />
       </div>
@@ -73,7 +75,8 @@ const Footer = memo(() => (
           href='https://www.disneyplus.com/zh-tw#apac-plan-comp'
           target='_blank'
           onClick={() => {
-            Gtag.event('footer', 'click_plan_details');
+            window.gtag('event', 'click_plan_details');
+            // Gtag.event('footer', 'click_plan_details');
           }}
         >
           參閱方案細節

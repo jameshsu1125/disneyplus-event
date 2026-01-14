@@ -3,7 +3,7 @@ import { ActionType } from '@/settings/type';
 import { memo, useContext } from 'react';
 import './index.less';
 import { scrollToElement } from '@/settings/utils';
-import Gtag from 'lesca-gtag';
+// import Gtag from 'lesca-gtag';
 
 const Form = memo(() => {
   const [, setContext] = useContext(Context);
@@ -12,8 +12,8 @@ const Form = memo(() => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
     const data = Object.fromEntries(new FormData(form).entries());
-
-    Gtag.event('landing', '搜尋房屋', data);
+    window.gtag('event', '搜尋房屋');
+    // Gtag.event('landing', '搜尋房屋');
 
     if (Object.values(data).length === 0 || Object.values(data).includes('0')) {
       setContext({
