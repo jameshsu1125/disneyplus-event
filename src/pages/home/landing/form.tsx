@@ -12,7 +12,10 @@ const Form = memo(() => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
     const data = Object.fromEntries(new FormData(form).entries());
-    window.gtag('event', '搜尋房屋');
+    window.gtag('event', 'click', {
+      event_category: 'landing',
+      event_label: 'search_house',
+    });
     // Gtag.event('landing', '搜尋房屋');
 
     if (Object.values(data).length === 0 || Object.values(data).includes('0')) {

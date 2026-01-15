@@ -55,7 +55,10 @@ const Footer = memo(() => (
           description='訂閱 DISNEY+ 年費方案，現省18%*'
           onClick={() => {
             window.open(URLList.annual, '_blank');
-            window.gtag('event', 'click_annual_plan');
+            window.gtag('event', 'click', {
+              event_category: 'footer',
+              event_label: 'click_annual_plan',
+            });
             // Gtag.event('footer', 'click_annual_plan');
           }}
         />
@@ -64,7 +67,10 @@ const Footer = memo(() => (
           description='可隨時升級或取消^'
           onClick={() => {
             window.open(URLList.plans, '_blank');
-            window.gtag('event', 'click_monthly_plan');
+            window.gtag('event', 'click', {
+              event_category: 'footer',
+              event_label: 'click_monthly_plan',
+            });
             // Gtag.event('footer', 'click_monthly_plan');
           }}
         />
@@ -75,7 +81,10 @@ const Footer = memo(() => (
           href='https://www.disneyplus.com/zh-tw#apac-plan-comp'
           target='_blank'
           onClick={() => {
-            window.gtag('event', 'click_plan_details');
+            window.gtag('event', 'click', {
+              event_category: 'footer',
+              event_label: 'click_plan_details',
+            });
             // Gtag.event('footer', 'click_plan_details');
           }}
         >

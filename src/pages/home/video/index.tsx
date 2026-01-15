@@ -19,7 +19,10 @@ const Video = memo(() => {
     const onClick = () => {
       setContext({ type: ActionType.Music, state: false });
       // Gtag.event('video', 'play_video');
-      window.gtag('event', 'play_video');
+      window.gtag('event', 'click', {
+        event_category: 'video',
+        event_label: 'play_video',
+      });
     };
 
     let blurTimeout: NodeJS.Timeout;
