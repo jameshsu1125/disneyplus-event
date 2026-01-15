@@ -41,8 +41,7 @@ const Carousel = forwardRef(({ item, setState }: TProps, ref) => {
             onSlideChange={(swiper) => {
               setState(swiper.realIndex);
               window.gtag('event', 'click', {
-                event_category: 'carousel',
-                event_label: 'slide_change',
+                data: 'slide_change',
               });
 
               // Gtag.event('carousel', 'slide_change');

@@ -13,8 +13,7 @@ const Form = memo(() => {
     const form = e.target as HTMLFormElement;
     const data = Object.fromEntries(new FormData(form).entries());
     window.gtag('event', 'click', {
-      event_category: 'landing',
-      event_label: 'search_house',
+      data: 'search_house',
     });
     // Gtag.event('landing', '搜尋房屋');
 

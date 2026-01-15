@@ -20,8 +20,7 @@ const Video = memo(() => {
       setContext({ type: ActionType.Music, state: false });
       // Gtag.event('video', 'play_video');
       window.gtag('event', 'click', {
-        event_category: 'video',
-        event_label: 'play_video',
+        data: 'play_video',
       });
     };
 

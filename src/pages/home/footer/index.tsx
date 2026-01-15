@@ -56,8 +56,7 @@ const Footer = memo(() => (
           onClick={() => {
             window.open(URLList.annual, '_blank');
             window.gtag('event', 'click', {
-              event_category: 'footer',
-              event_label: 'click_annual_plan',
+              data: 'click_annual_plan',
             });
             // Gtag.event('footer', 'click_annual_plan');
           }}
@@ -68,8 +67,7 @@ const Footer = memo(() => (
           onClick={() => {
             window.open(URLList.plans, '_blank');
             window.gtag('event', 'click', {
-              event_category: 'footer',
-              event_label: 'click_monthly_plan',
+              data: 'click_monthly_plan',
             });
             // Gtag.event('footer', 'click_monthly_plan');
           }}
@@ -82,8 +80,7 @@ const Footer = memo(() => (
           target='_blank'
           onClick={() => {
             window.gtag('event', 'click', {
-              event_category: 'footer',
-              event_label: 'click_plan_details',
+              data: 'click_plan_details',
             });
             // Gtag.event('footer', 'click_plan_details');
           }}
